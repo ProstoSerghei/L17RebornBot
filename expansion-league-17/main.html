@@ -1,0 +1,116 @@
+<!-- popup.html -->
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <style>
+        html {
+            min-height: 20em;
+            min-width: 17em;
+        }
+
+        .containerForTextInput {
+            text-align: center;
+        }
+
+        #status {
+            text-align: center;
+        }
+
+        p {
+            margin-bottom: 10px;
+            margin-top: 10px;
+        }
+
+        #showCurrenRoute {
+            border: 1px solid black;
+            border-radius: 5px;
+        }
+
+        h3 {
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <h2 style="text-align: center;">Настройки автобоя:</h2>
+    <table style=" text-align: center; width: 100%;" title="Выбранные атаки будут использоваться АвтоБоем">
+        <caption>Выберите <b>Атаки</b>:</caption>
+        <tbody>
+            <tr>
+                <td>
+                    <label for="move1">
+                        <input type="checkbox" id="move1">
+                        Атака 1
+                    </label>
+                </td>
+                <td>
+                    <label for="move2">
+                        <input type="checkbox" id="move2">
+                        Атака 2
+                    </label>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="move3">
+                        <input type="checkbox" id="move3">
+                        Атака 3
+                    </label>
+                </td>
+                <td>
+                    <label for="move4">
+                        <input type="checkbox" id="move4">
+                        Атака 4
+                    </label>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <label for="startAutoFight">
+                        <input type="checkbox" id="startAutoFight"
+                            title="После сохранения настроек, АвтоБой будет запущен">
+                        Запустить автобой
+                    </label>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <div class="containerForTextInput">
+        <form action="#">
+            <p>
+                <label class="UserInputLabel" for="userApiKey" title="Ключ нужен для распознавания капчи!">
+                    Введите Ваш API-key (<i>anti-captcha.com</i>):
+                    <br>
+                    <input name="userApiKey" id="userApiKey" type="text"><br>
+                    <span id="balance"></span><br>
+                </label>
+            </p>
+            <p>
+                <label class="UserInputLabel" for="minHP"
+                    title="Если НР будет меньше указанного числа, сработает АвтоЛечение">
+                    Введите кол-во НР:
+                    <br>
+                    <input name="minHealthPoints" id="minHealthPoints" type="text">
+                    <br>
+                </label>
+                <label for="userMapToPCBool" title="После сохранения настроек, начнется запись пути до ПЦ.">
+                    <input type="checkbox" id="userMapToPCBool">
+                    Включить редактор пути до Покецентра
+                </label>
+            </p>
+            <h3>Текущий маршрут:</h3>
+            <p id="showCurrenRoute"></p>
+            <p>P.S. Наводите курсор, для просмотра подсказок.</p>
+            <br>
+            <button id="save" title="">Сохранить</button>
+            <button id="clearStorage">Очистить</button>
+        </form>
+    </div><br>
+    <script src="scripts/content.js"></script>
+</body>
+
+</html>
