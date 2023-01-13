@@ -30,6 +30,12 @@ startAutoFightEl.addEventListener('change', () => {
     }
 })
 
+document.body.addEventListener('click', function (e) {
+    if (e.target.matches('a[href]')) {
+        chrome.tabs.create({ url: e.target.href });
+    }
+});
+
 function saveOptions() {
     chrome.storage.local.set({
         moves: {
