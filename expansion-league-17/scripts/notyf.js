@@ -1,6 +1,6 @@
 // Уведомления внутри игры (Замена alert))
 
-window.alert = console.log;
+// window.alert = console.log;
 
 // var divNotyf = document.createElement('div');
 // divNotyf.classList.add('notyf');

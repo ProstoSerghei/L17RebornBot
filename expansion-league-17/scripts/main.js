@@ -38,6 +38,8 @@ chrome.storage.onChanged.addListener(function () {
                 locationReload();
             } else if (createMapToPCEnabled) {
                 createRoute();
+            } else if (!autoFightEnabled) {
+                locationReload();
             }
         }, 1000);
     });
@@ -252,6 +254,10 @@ function chat() {
                 var messFrom = abotMesEl.querySelectorAll('a')[0].innerText;
                 if (messFrom !== nickName) {
                     sendMessage(`Сообщение от ${messFrom}`, mutation.addedNodes[3].innerText);
+                    if (abotMesEl.querySelector('a').style.color === 'rgb(151, 0, 0)') {
+                        chrome.storage.local.set({ startAutoFight: false });
+                        sendMessage('Автобой', `Вам пишет ${messFrom}, АвтоБой отключен.`);
+                    }
                 }
             }
         });
