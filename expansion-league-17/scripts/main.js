@@ -252,9 +252,10 @@ function chat() {
             var abotMesEl = mutation.addedNodes[1];
             if (abotMesEl.tagName === 'B') {
                 var messFrom = abotMesEl.querySelectorAll('a')[0].innerText;
+                var nickColor = abotMesEl.querySelector('a').style.color;
                 if (messFrom !== nickName) {
                     sendMessage(`Сообщение от ${messFrom}`, mutation.addedNodes[3].innerText);
-                    if (abotMesEl.querySelector('a').style.color === 'rgb(151, 0, 0)') {
+                    if (nickColor === 'rgb(151, 0, 0)' || nickColor === 'rgb(5, 108, 0)') {
                         chrome.storage.local.set({ startAutoFight: false });
                         sendMessage('Автобой', `Вам пишет ${messFrom}, АвтоБой отключен.`);
                     }
