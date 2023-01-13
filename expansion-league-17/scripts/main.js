@@ -113,11 +113,14 @@ function locationReload() {
             let checker = true;
             ppCountEls.forEach(el => {
                 let currentPP = parseInt(el.innerText);
-                autoFight.moves[`move${i}`].count = currentPP;
-                if (currentPP === 0) {
-                    checker = true;
-                } else {
-                    checker = false;
+                let currentMove = autoFight.moves[`move${i}`];
+                currentMove.count = currentPP;
+                if (currentMove.canUse) {
+                    if (currentMove.count === 0) {
+                        checker = true;
+                    } else {
+                        checker = false;
+                    }
                 }
                 i++;
             });
