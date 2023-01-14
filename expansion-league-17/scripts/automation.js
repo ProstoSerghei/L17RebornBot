@@ -96,7 +96,8 @@ class AutoCaptcha {
                 "numeric": 1,
                 "minLength": 4,
                 "maxLength": 4
-            }
+            },
+            "softId": 1077
         };
         var createTask = await fetch(createTaskURL, {
             method: 'POST',
