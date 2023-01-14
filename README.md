@@ -5,7 +5,7 @@
 
 > 1. Заходим в «расширения»:
 > 
-> ![Step 1](https://s346vla.storage.yandex.net/rdisk/fe3d270dabeb92f5d4e68665844057cb5f94af6d11056b29de5a851f473db995/63c32906/Iwn5UFuf4AHI5UYxK8fVvU_v1J7HXsGVAqkBYlY6pfeBzQ4p9Uu9-zJ_YhUSzvjaFZZ60NE4bkNNvlY_wbjzWA==?uid=1111800083&filename=1.png&disposition=inline&hash=&limit=0&content_type=image%2Fpng&owner_uid=1111800083&fsize=21976&hid=c50b02082119e1a36528fa39bc113520&media_type=image&tknv=v2&etag=f74b6d8b21a3e106c142307daf71d38a&rtoken=bYXJNKs60PG8&force_default=yes&ycrid=na-8afbecb2e613a87101d33bc149fd39a1-downloader2f&ts=5f240a8b7cd80&s=0293c9da84b37a9c78cf03b994775e9ab979c52221681278c350f2d2ff7c6995&pb=U2FsdGVkX18gOF7reHF1smKMYLRg2Xt3KVRgMN9EVwIZVDItsTFNGbhrq8-_UNQqFFfS9VkO4nq8EQ7qcBW3eEutUldFpVSZYgU6yn2jBqc)
+> ![Step 1](https://s71myt.storage.yandex.net/rdisk/098db9fbd2716508b6dac968a8c2859c52604d7336927281b04f995ad680d98b/63c329c0/Iwn5UFuf4AHI5UYxK8fVvTvD3s6u9Tw-QrXk7kQgGDfOYKv6rEySgtTSAd4ZTcreYNISHJnmFTYq8nwci7j4JQ==?uid=1111800083&filename=1.png&disposition=inline&hash=&limit=0&content_type=image%2Fpng&owner_uid=1111800083&fsize=32060&hid=539aebd69261180691c7cc05ab559743&media_type=image&tknv=v2&etag=113fd091745c788607b88e9461ca099e&rtoken=xaus2BkSxhbc&force_default=yes&ycrid=na-1f9ebd222d2c504d7efd6f0ebde27fd0-downloader2f&ts=5f240b3cdf000&s=d0f8f4800177f0cb80df7202a8a763347fc26e862ab123b4dcdb653bd1a1561e&pb=U2FsdGVkX181_rmhvGx6u3cfeoAeTdfPds29kOFcSAuPcOzhScmSedlogAQy5QIfR29Mm4N7dlTp19XAKbhiUOgQEZLS7Mmyf8nuZzAKDdE)
 
 
 > 2. Далее включаем «Режим разработчика»:
