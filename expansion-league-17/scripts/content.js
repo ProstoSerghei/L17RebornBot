@@ -50,7 +50,7 @@ function saveOptions() {
         userMapToPCBool: userMapToPCBoolEl.checked,
     }).then(
         function () {
-            sendMessage('Настрйоки', 'Настройки сохранены!');
+            sendMessage('Настройки', 'Настройки сохранены!');
         }
     );
 }
