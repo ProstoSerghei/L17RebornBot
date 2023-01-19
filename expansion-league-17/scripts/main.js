@@ -251,7 +251,7 @@ function chat() {
         el = el.target;
         if (el.tagName === 'B') {
             var messFrom = el.querySelectorAll('a')[0];
-            var nickColor = messFrom.style.color;
+            var nickColor = messFrom?.style.color;
             if (messFrom.innerText !== nickName) {
                 if (nickColor === 'rgb(151, 0, 0)' || nickColor === 'rgb(5, 108, 0)') {
                     chrome.storage.local.set({ startAutoFight: false });
