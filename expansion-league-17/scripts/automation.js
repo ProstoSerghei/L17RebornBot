@@ -38,7 +38,7 @@ class AutoFight {
             let move = this.moves['move' + i];
             if (move.canUse && move.count > 0) {
                 move.count -= 1;
-                frames[0].document.querySelector(move.link).click();
+                frames[0].document.querySelector(move.link)?.click();
                 break;
             }
         }

@@ -229,7 +229,8 @@ function sendMessage(title, text) {
 
 
 // Слушаем сообщения...
-var nickName = '';
+const chatFrameEl = document.querySelector('frame[name="_chat"]');
+let nickName = '';
 getNickName();
 async function getNickName() {
     var nickNameReq = await fetch('https://league17reborn.ru/game.php?fun=start');
@@ -241,37 +242,24 @@ async function getNickName() {
     });
 }
 
-document.querySelector('frame[name="_chat"]').addEventListener('load', () => {
+chatFrameEl.addEventListener('load', () => {
     setTimeout(chat, 3000);
 });
 
 function chat() {
-    let elem = frames[1].document.querySelector('#message_box');
-    var observer = new MutationObserver(function (mutations) {
-        mutations.forEach(function (mutation) {
-            var abotMesEl = mutation.addedNodes[1];
-            if (abotMesEl.tagName === 'B') {
-                var messFrom = abotMesEl.querySelectorAll('a')[0].innerText;
-                var nickColor = abotMesEl.querySelector('a').style.color;
-                if (messFrom !== nickName) {
-                    sendMessage(`Сообщение от ${messFrom}`, mutation.addedNodes[3].innerText);
-                    if (nickColor === 'rgb(151, 0, 0)' || nickColor === 'rgb(5, 108, 0)') {
-                        chrome.storage.local.set({ startAutoFight: false });
-                        sendMessage('Автобой', `Вам пишет ${messFrom}, АвтоБой отключен.`);
-                    }
+    frames[1].document.querySelector("#message_box")?.addEventListener('DOMNodeInserted', el => {
+        el = el.target;
+        if (el.tagName === 'B') {
+            var messFrom = el.querySelectorAll('a')[0];
+            var nickColor = messFrom.style.color;
+            if (messFrom.innerText === nickName) {
+                if (nickColor === 'rgb(151, 0, 0)' || nickColor === 'rgb(5, 108, 0)') {
+                    chrome.storage.local.set({ startAutoFight: false });
+                    sendMessage('Автобой', `Вам пишет ${messFrom.innerText}, АвтоБой отключен.`);
+                } else {
+                    sendMessage(`Сообщение от ${messFrom.innerText}`, el.nextSibling.nextSibling.innerText);
                 }
             }
-        });
-    });
-    observer.observe(
-        elem,
-        {
-            childList: true,
-            attributes: true,
-            subtree: true,
-            characterData: true,
-            attributeOldValue: true,
-            characterData: true,
         }
-    );
+    })
 }
