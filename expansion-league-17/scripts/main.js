@@ -10,6 +10,8 @@ var createMapToPCEnabled = false;
 var userMapToPC = [];
 var tempMapToPC = []; // for walker()
 
+let arenaHelperEnabled;
+
 //Создаем AutoFight
 const autoFight = new AutoFight();
 
@@ -208,6 +210,7 @@ function getSettings() {
                 autoCaptcha = new AutoCaptcha(items.userApiKey);
                 minHealthPoints = items.minHealthPoints;
                 createMapToPCEnabled = items.userMapToPCBool;
+                arenaHelperEnabled = items.arenaHelperEnabled;
                 if (items.userMapToPC) {
                     userMapToPC = items.userMapToPC;
                 }

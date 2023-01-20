@@ -10,6 +10,7 @@ const minHealthPointsEl = document.querySelector('#minHealthPoints');
 const userMapToPCBoolEl = document.querySelector('#userMapToPCBool');
 const showCurrenRoute = document.querySelector('#showCurrenRoute');
 const balanceCaptcha = document.querySelector('#balance');
+const arenaHelperEnabledEl = document.querySelector('#arenaHelperEnabled');
 
 document.addEventListener('DOMContentLoaded', restoreOptions);
 document.querySelector('#save').addEventListener('click', saveOptions);
@@ -48,6 +49,7 @@ function saveOptions() {
         userApiKey: userApiKeyEl.value,
         minHealthPoints: minHealthPointsEl.value,
         userMapToPCBool: userMapToPCBoolEl.checked,
+        arenaHelperEnabled: arenaHelperEnabledEl.checked
     }).then(
         function () {
             sendMessage('Настройки', 'Настройки сохранены!');
@@ -67,7 +69,8 @@ function restoreOptions() {
         userApiKey: '',
         minHealthPoints: 100,
         userMapToPCBool: false,
-        userMapToPC: []
+        userMapToPC: [],
+        arenaHelperEnabled: false
     }).then(
         function (items) {
             move1El.checked = items.moves.move1['canUse'];
@@ -79,6 +82,7 @@ function restoreOptions() {
             minHealthPointsEl.value = items.minHealthPoints;
             userMapToPCBoolEl.checked = items.userMapToPCBool;
             showCurrenRoute.innerHTML = items.userMapToPC.join(', ');
+            arenaHelperEnabledEl.checked = items.arenaHelperEnabled;
             getBalance();
         }
     );
