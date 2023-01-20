@@ -27,6 +27,8 @@ window.addEventListener('load', function () {
                 locationReload();
             } else if (createMapToPCEnabled) {
                 createRoute();
+            } else if (arenaHelperEnabled) {
+                document.querySelector('#_location').addEventListener('load', arenaHelper);
             }
         }, 1000);
     });
@@ -55,6 +57,9 @@ document.querySelector('#_location').addEventListener('load', () => {
         timer = setTimeout(() => {
             frames[0].location.reload();
         }, 60 * 1000);
+    }
+    else if (arenaHelperEnabled) {
+        document.querySelector('#_location').addEventListener('load', arenaHelper);
     }
 });
 

@@ -160,9 +160,6 @@ class AutoCaptcha {
 
 let trainersPokemons = {};
 
-setTimeout(() => {
-    document.querySelector('#_location').addEventListener('load', arenaHelper);
-}, 3000);
 function arenaHelper() {
     if (arenaHelperEnabled) {
         if (frames[0].document.title !== 'LEAGUE-17 FIGHT!') {
@@ -170,9 +167,9 @@ function arenaHelper() {
         } else {
             // add pokemon to 'trainersPokemons'
             let pokNameEl = frames[0].document.querySelectorAll(".title")[1]?.querySelector('span');
-            let currentPokemon = pokNameEl.innerText.trim();
             let enemyNick = frames[0].document.querySelectorAll("#txt_c > b > big > font")[1];
-            if (currentPokemon && enemyNick) {
+            if (pokNameEl && enemyNick) {
+                let currentPokemon = pokNameEl.innerText.trim();
                 trainersPokemons[currentPokemon] = arenaPokemons[currentPokemon];
                 // add title for pokemon name
                 pokNameEl.setAttribute('title', `${[currentPokemon]}: ${trainersPokemons[currentPokemon]}`);
